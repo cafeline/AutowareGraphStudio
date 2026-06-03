@@ -1,0 +1,50 @@
+{
+  "name": "autoware_graph_studio",
+  "version": "0.1.0",
+  "description": "AutowareGraphStudio - Autoware launch and ROS graph visualization and editing GUI.",
+  "author": "AutowareGraphStudio Project <autoware_graph_studio@example.invalid>",
+  "license": "UNLICENSED",
+  "private": true,
+  "packageManager": "pnpm@11.1.1",
+  "type": "module",
+  "main": "out/main/main.js",
+  "scripts": {
+    "dev": "vite",
+    "dev:electron": "electron-vite dev",
+    "typecheck": "tsc",
+    "build": "tsc && vite build",
+    "build:electron": "electron-vite build",
+    "dist": "electron-vite build && electron-builder --linux deb && cp dist-app/AutowareGraphStudio_${npm_package_version}_amd64.deb ./AutowareGraphStudio_${npm_package_version}_amd64.deb",
+    "dist:deb": "electron-vite build && electron-builder --linux deb && cp dist-app/AutowareGraphStudio_${npm_package_version}_amd64.deb ./AutowareGraphStudio_${npm_package_version}_amd64.deb",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@xyflow/react": "^12.4.4",
+    "dagre": "^0.8.5",
+    "fast-xml-parser": "^4.5.0",
+    "js-yaml": "^4.1.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "roslib": "^2.1.0",
+    "zustand": "^5.0.1"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.0.1",
+    "@types/dagre": "^0.7.52",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^22.9.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.3",
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8",
+    "electron-vite": "^2.3.0",
+    "jsdom": "^25.0.1",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11",
+    "vitest": "^2.1.5"
+  }
+}
